@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :gandalf, Gandalf.Repo,
+config :reshape, Reshape.Repo,
   url: "postgres://rqxejfpn:Z42RFitI4sXdNEOXV8mbndB-vUVB_7m4@drona.db.elephantsql.com:5432/rqxejfpn",
   show_sensitive_data_on_connection_error: true,
   pool_size: 2
@@ -12,7 +12,7 @@ config :gandalf, Gandalf.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :gandalf, GandalfWeb.Endpoint,
+config :reshape, ReshapeWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -52,13 +52,13 @@ config :gandalf, GandalfWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :gandalf, GandalfWeb.Endpoint,
+config :reshape, ReshapeWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/gandalf_web/(live|views)/.*(ex)$",
-      ~r"lib/gandalf_web/templates/.*(eex)$"
+      ~r"lib/reshape_web/(live|views)/.*(ex)$",
+      ~r"lib/reshape_web/templates/.*(eex)$"
     ]
   ]
 

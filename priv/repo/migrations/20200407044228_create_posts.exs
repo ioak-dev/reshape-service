@@ -1,4 +1,4 @@
-defmodule Gandalf.Repo.Migrations.CreatePosts do
+defmodule Reshape.Repo.Migrations.CreatePosts do
   use Ecto.Migration
 
   def change do

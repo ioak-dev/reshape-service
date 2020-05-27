@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :gandalf,
-  ecto_repos: [Gandalf.Repo]
+config :reshape,
+  ecto_repos: [Reshape.Repo]
 
 # Configures the endpoint
-config :gandalf, GandalfWeb.Endpoint,
+config :reshape, ReshapeWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "QEfLM5g6RWqOTOpO08UozwwrDqCRpxiblKn7TDM4TDvspWRHQoKptUPrqIHOWU/E",
-  render_errors: [view: GandalfWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Gandalf.PubSub, adapter: Phoenix.PubSub.PG2],
+  render_errors: [view: ReshapeWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Reshape.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "8OeZc0Gk"]
 
 # Configures Elixir's Logger

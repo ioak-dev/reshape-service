@@ -1,4 +1,4 @@
-defmodule Gandalf.DataCase do
+defmodule Reshape.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule Gandalf.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use Gandalf.DataCase, async: true`, although
+  by setting `use Reshape.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule Gandalf.DataCase do
 
   using do
     quote do
-      alias Gandalf.Repo
+      alias Reshape.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Gandalf.DataCase
+      import Reshape.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Gandalf.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Reshape.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Gandalf.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Reshape.Repo, {:shared, self()})
     end
 
     :ok
